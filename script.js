@@ -1,8 +1,20 @@
-/**
+ /**
+ * TITLE:
+ * @component: Table of Contents
+ *
+ * AUTHOR:
+ * Citizens Advice: Front-end
+ *
+ * DESCRIPTION:
  * Populating Table of contents:
  * TOC will be added if the advisor is logged in
  *
- * Author: @Citizens Advice
+ * README:
+ *
+ *
+ * API:
+ *
+ *
  */
 
 'use strict';
@@ -11,7 +23,7 @@ var TableOfContents = (function () {
     
     var tocItems = $('h2.js-ref'); 
     var adviceContent = document.getElementsByClassName("articleContent");
-    var advisorLogin = ($("input[name*='radio-inline']").val()); 
+    var advisorLogin = ($("input[name*='astat']").val()); 
     var tocArray = [];
     var tocList;
 
@@ -35,7 +47,7 @@ var TableOfContents = (function () {
     };
 
     function renderList() {
-        if (advisorLogin === "yes" ) {
+        if (advisorLogin === "True" ) {
             populateTOC();
             $(adviceContent).prepend(tocList);
         }
