@@ -12,3 +12,10 @@
 .well.tertiary ul li a{
     font-size: 14px;
 }
+
+@media screen and (max-width: 600px) {
+	.well.tertiary .ul--2-column{
+	    -webkit-column-count: 1;
+    	column-count: 1;
+	}
+}
