@@ -21,7 +21,7 @@
 
 var TableOfContents = (function () {
     
-    var tocItems = $('h2.js-ref'); 
+    var tocItems = $('.ref-heading'); 
     var adviceContent = document.getElementsByClassName("articleContent");
     var advisorLogin = ($('input[name*="astat"]').val());
     var tocArray = [];
@@ -40,6 +40,7 @@ var TableOfContents = (function () {
     function populateTOC() {
         var tempItems = '';
         addingToTOC(tocItems);
+        tocArray.shift(); //removing the first element in the array. As this is the title of the page
         tocArray.forEach(function(item){
             tempItems += '<li><a href=#' + item.id + '>' + item.content + '</a></li>';
         });

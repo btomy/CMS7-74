@@ -1,12 +1,5 @@
 .well.tertiary{
-    background:#cbe0e4;
-}
-
-.well.tertiary span{
-    font-size: 14px;
-    font-weight: bold;
-    margin: 1em 0;
-    display: block;
+    background:#e7f3f5;
 }
 
 .well.tertiary ul li a{
