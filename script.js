@@ -23,7 +23,7 @@ var TableOfContents = (function () {
     
     var tocItems = $('h2.js-ref'); 
     var adviceContent = document.getElementsByClassName("articleContent");
-    var advisorLogin = ($("input[name*='astat']").val()); 
+    var advisorLogin = ($('input[name*="astat"]').val());
     var tocArray = [];
     var tocList;
 
@@ -41,13 +41,20 @@ var TableOfContents = (function () {
         var tempItems = '';
         addingToTOC(tocItems);
         tocArray.forEach(function(item){
-            tempItems += "<li><a href=#" + item.id + ">" + item.content + "</a></li>";
+            tempItems += '<li><a href=#' + item.id + '>' + item.content + '</a></li>';
         });
-        return tocList = ("<div class='well tertiary'><span> On this page </span><ul class='ul--2-column'> " + tempItems + " </ul></div>");
+        return tocList = (
+            '<div class="well tertiary">'+
+                '<h5> On this page </h5>'+
+                '<ul class="ul--2-column">'+
+                    tempItems+
+                '</ul>'+
+            '</div>'
+        );
     };
 
     function renderList() {
-        if (advisorLogin === "True" ) {
+        if (advisorLogin === 'True' ) {
             populateTOC();
             $(adviceContent).prepend(tocList);
         }
