@@ -43,7 +43,7 @@ var TableOfContents = (function () {
         tocArray.forEach(function(item){
             tempItems += "<li><a href=#" + item.id + ">" + item.content + "</a></li>";
         });
-        return tocList = ("<div class='well TOC'><span> On this page </span><ul> " + tempItems + " </ul></div>");
+        return tocList = ("<div class='well tertiary'><span> On this page </span><ul class='ul--2-column'> " + tempItems + " </ul></div>");
     };
 
     function renderList() {
