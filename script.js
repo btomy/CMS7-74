@@ -29,14 +29,6 @@ var TableOfContents = (function () {
     var tocList;
 
     function addingToTOC(text,id) {
-        // $(text).each(function() {
-        //     var tempObj = { 
-        //         id: this.id, 
-        //         content: this.textContent 
-        //     };
-        //     tocArray.push(tempObj);
-        // });
-
         $.each(text, function (i, item) {
              var tempObj = { 
                 id: id[i].id, 
@@ -44,15 +36,6 @@ var TableOfContents = (function () {
             };
             tocArray.push(tempObj);
 		});
-
-        // for(var i = 0; i < text.length; i++){
-		//     var tempObj = { 
-        //         id: id[i].id, 
-        //         content: text[i].textContent
-        //     };
-        //     tocArray.push(tempObj);
-		// }
-
     };
 
     function populateTOC() {
