@@ -21,25 +21,43 @@
 
 var TableOfContents = (function () {
     
-    var tocItems = $('.ref-heading'); 
+    var tocItems = $('.ref-heading__heading'); 
+    var tocItemsID = $('.ref-heading');
     var adviceContent = document.getElementsByClassName("articleContent");
     var advisorLogin = ($('input[name*="astat"]').val());
     var tocArray = [];
     var tocList;
 
-    function addingToTOC(options) {
-        $(options).each(function() {
-            var tempObj = { 
-                id: this.id, 
-                content: this.textContent 
+    function addingToTOC(text,id) {
+        // $(text).each(function() {
+        //     var tempObj = { 
+        //         id: this.id, 
+        //         content: this.textContent 
+        //     };
+        //     tocArray.push(tempObj);
+        // });
+
+        $.each(text, function (i, item) {
+             var tempObj = { 
+                id: id[i].id, 
+                content: item.textContent
             };
             tocArray.push(tempObj);
-        });
+		});
+
+        // for(var i = 0; i < text.length; i++){
+		//     var tempObj = { 
+        //         id: id[i].id, 
+        //         content: text[i].textContent
+        //     };
+        //     tocArray.push(tempObj);
+		// }
+
     };
 
     function populateTOC() {
         var tempItems = '';
-        addingToTOC(tocItems);
+        addingToTOC(tocItems,tocItemsID);
         tocArray.shift(); //removing the first element in the array. As this is the title of the page
         tocArray.forEach(function(item){
             tempItems += '<li><a href=#' + item.id + '>' + item.content + '</a></li>';
